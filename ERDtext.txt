@@ -1,17 +1,17 @@
 departments
 -
-dept_no PK varchar(4)
-dept_name UNIQUE varchar
+dept_no varchar(4) PK
+dept_name varchar UNIQUE
 
 titles
 -
-title_id PK varchar(4)
-title UNIQUE varchar
+title_id varchar(5) PK
+title varchar UNIQUE
 
 employees
 -
-emp_no PK int
-emp_title_id varchar(4) FK >- titles.title_id
+emp_no int PK
+emp_title_id varchar(5) FK >- titles.title_id
 birth_date date
 first_name varchar
 last_name varchar
@@ -20,15 +20,17 @@ hire_date date
 
 salaries
 -
-emp_no int FK >- employees.emp_no
+emp_no int FK >- employees.emp_no PK
 salary int
 
 dept_emp
 -
 emp_no int FK >- employees.emp_no
 dept_no varchar(4) FK >- departments.dept_no
+emp_no_dept_no PK
 
 dept_manager
 -
 dept_no varchar(4) FK >- departments.dept_no
 emp_no int FK >- employees.emp_no
+dept_no_emp_no PK

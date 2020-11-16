@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS dept_emp;
 DROP TABLE IF EXISTS dept_manager;
 DROP TABLE IF EXISTS employees CASCADE;
 DROP TABLE IF EXISTS salaries;
-DROP TABLE IF EXISTS titles;
+DROP TABLE IF EXISTS titles CASCADE;
 
 
 CREATE TABLE departments(
@@ -12,13 +12,13 @@ dept_name varchar UNIQUE
 );
 
 CREATE TABLE titles(
-title_id varchar(4) PRIMARY KEY,
+title_id varchar(5) PRIMARY KEY,
 title varchar UNIQUE
 );
 
 CREATE TABLE employees(
 emp_no integer PRIMARY KEY,
-emp_title_id varchar(4) NOT NULL,
+emp_title_id varchar(5) NOT NULL,
 FOREIGN KEY (emp_title_id) REFERENCES titles(title_id),
 birth_date date,
 first_name varchar,
