@@ -1,3 +1,11 @@
+DROP TABLE IF EXISTS departments CASCADE;
+DROP TABLE IF EXISTS dept_emp;
+DROP TABLE IF EXISTS dept_manager;
+DROP TABLE IF EXISTS employees CASCADE;
+DROP TABLE IF EXISTS salaries;
+DROP TABLE IF EXISTS titles;
+
+
 CREATE TABLE departments(
 dept_no varchar(4) PRIMARY KEY,
 dept_name varchar UNIQUE
