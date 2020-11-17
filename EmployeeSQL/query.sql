@@ -8,13 +8,22 @@ SELECT
 	e.emp_no as "Employee #",
 	e.last_name as "Last Name",
 	e.first_name as "First Name",
-	e.sex as sex,
-	s.salary as salary
+	e.sex as Sex,
+	s.salary as Salary
 from employees e
 LEFT JOIN salaries s on
 e.emp_no = s.emp_no;
 
 --2. List first name, last name, and hire date for employees who were hired in 1986.
+SELECT
+	e.emp_no as "Employee #",
+	e.last_name as "Last Name",
+	e.first_name as "First Name",
+	e.hire_date as "Hire Date"
+from employees e
+where
+EXTRACT(ISOYEAR FROM e.hire_date) = 1986
+;
 
 
 --3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
